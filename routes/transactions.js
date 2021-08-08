@@ -35,6 +35,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/admin", async (req, res) => {
+  try {
+    await Transaction.find({isApproved: false})
+      .then((transactions) => res.json(transactions))
+      .catch((err) => res.status(400).json("Error: " + err));
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
+
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
