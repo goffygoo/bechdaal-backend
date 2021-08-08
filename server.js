@@ -35,5 +35,5 @@ app.use("/users", users);
 // app.use("/api/company", jobs);
 // app.use("/api/userjob", userjobs);
 
-const port = 5000; // process.env.port is Heroku's port if you choose to deploy the app there
+const port = process.env.PORT; // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
