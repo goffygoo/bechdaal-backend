@@ -27,8 +27,7 @@ mongoose
 // Routes
 
 app.get('/', (req, res) => {
-  console.log('base route hit')
-  res.send({"" : ""})
+  res.send({"app" : "running"})
 })
 
 app.use("/transactions", transactions);
