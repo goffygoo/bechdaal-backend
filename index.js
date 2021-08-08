@@ -27,6 +27,7 @@ mongoose
 // Routes
 
 app.get('/', (req, res) => {
+  console.log('base route hit')
   res.send({"" : ""})
 })
 
@@ -35,5 +36,4 @@ app.use("/users", users);
 // app.use("/api/company", jobs);
 // app.use("/api/userjob", userjobs);
 
-const port = process.env.PORT; // process.env.port is Heroku's port if you choose to deploy the app there
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+app.listen(process.env.PORT || 4329, () => console.log(`Server running!`));
